@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* base styles */
+@layer base {
+  body,
+  html {
+    @apply flex flex-col;
+    background-color: #181826;
+    color: #9292ac;
+  }
+}
+
+/* theme styles */
+@layer utilities {
+  .theme-green .text-thm {
+    @apply text-thm-green;
+  }
+  .theme-pink .text-thm {
+    @apply text-thm-pink;
+  }
+  .theme-blue .text-thm {
+    @apply text-thm-blue;
+  }
+}

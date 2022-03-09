@@ -1,0 +1,25 @@
+<template>
+  <div>
+    <h1
+      class="font-bold leading-12 mb-8 text-4xl text-white"
+      v-if="size === '1'"
+    >
+      <slot />
+    </h1>
+    <h2 class="font-bold mb-8 text-2xl text-white" v-else-if="size === '2'">
+      <slot />
+    </h2>
+    <p class="font-bold mb-8 text-white" v-else><slot /></p>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    size: {
+      type: String,
+      default: "3",
+    },
+  },
+};
+</script>
