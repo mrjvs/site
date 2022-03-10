@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full relative h-12">
+  <div class="w-full relative h-12 flex items-center">
     <hr class="w-full h-div border-0 bg-bray-400" />
     <div
-      class="absolute left-0 right-0 -top-6 flex justify-center items-center"
+      class="absolute left-0 right-0 top-0 flex justify-center items-center"
       :class="{
         'theme-green': color === 'green',
         'theme-pink': color === 'pink',

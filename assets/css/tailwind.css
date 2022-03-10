@@ -19,12 +19,18 @@
 
 /* theme styles */
 @layer utilities {
+  body[data-theme="green"] .text-thm,
+  body[data-theme] .theme-green .text-thm,
   .theme-green .text-thm {
     @apply text-thm-green;
   }
+  body[data-theme="pink"] .text-thm,
+  body[data-theme] .theme-pink .text-thm,
   .theme-pink .text-thm {
     @apply text-thm-pink;
   }
+  body[data-theme="blue"] .text-thm,
+  body[data-theme] .theme-blue .text-thm,
   .theme-blue .text-thm {
     @apply text-thm-blue;
   }
