@@ -6,8 +6,8 @@
     <NavigationLink color="green" icon="pen" to="/writing">
       Writing
     </NavigationLink>
-    <NavigationLink color="pink" icon="person" to="/about-me">
+    <!-- <NavigationLink color="pink" icon="person" to="/about-me">
       More about me
-    </NavigationLink>
+    </NavigationLink> -->
   </NavigationBar>
 </template>
