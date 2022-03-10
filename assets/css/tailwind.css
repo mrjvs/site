@@ -3,10 +3,15 @@
 @tailwind utilities;
 
 /* base styles */
+::selection {
+  background-color: rgba(37, 109, 85, 0.308);
+  color: #c1f1db;
+}
+
 @layer base {
   body,
   html {
-    @apply flex flex-col;
+    @apply flex flex-col relative;
     background-color: #181826;
     color: #9292ac;
   }
@@ -22,5 +27,25 @@
   }
   .theme-blue .text-thm {
     @apply text-thm-blue;
+  }
+
+  body {
+    --theme-color: transparent;
+    --theme-color-dark: transparent;
+  }
+  body[data-theme="blue"],
+  .theme-blue {
+    --theme-color: theme("colors.thm-blue");
+    --theme-color-dark: theme("colors.thm-blue-dark");
+  }
+  body[data-theme="pink"],
+  .theme-pink {
+    --theme-color: theme("colors.thm-pink");
+    --theme-color-dark: theme("colors.thm-pink-dark");
+  }
+  body[data-theme="green"],
+  .theme-green {
+    --theme-color: theme("colors.thm-green");
+    --theme-color-dark: theme("colors.thm-green-dark");
   }
 }

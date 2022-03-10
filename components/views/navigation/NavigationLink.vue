@@ -2,7 +2,7 @@
   <NavigationItem>
     <NuxtLink
       :to="to"
-      class="font-bold transition-colors text-bray-200"
+      class="font-bold transition-colors text-bray-200 flex justify-center items-center space-x-3 py-3 px-4"
       :class="{
         'link-blue hover:text-thm-blue': color === 'blue',
         'link-pink hover:text-thm-pink': color === 'pink',
@@ -10,7 +10,10 @@
       }"
       exact
     >
-      <slot />
+      <Icon v-if="icon.length > 0" :icon="icon" />
+      <span>
+        <slot />
+      </span>
     </NuxtLink>
   </NavigationItem>
 </template>
@@ -37,6 +40,10 @@ export default {
     to: {
       type: String,
       required: true,
+    },
+    icon: {
+      type: String,
+      default: "",
     },
   },
 };

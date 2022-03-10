@@ -1,5 +1,5 @@
 <template>
-  <li class="mr-10">
+  <li class="mr-1">
     <slot />
   </li>
 </template>
