@@ -1,5 +1,5 @@
 <template>
-  <footer class="mt-40 mb-5 text-center text-bray-200">
+  <footer class="mt-64 mb-5 text-center text-bray-200">
     <p>
       <span>Made by me and with </span>
       <span class="text-xl mx-1">
