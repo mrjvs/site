@@ -52,4 +52,9 @@ export default {
     cssPath: "~/assets/css/tailwind.css",
     configPath: "tailwind.config.js",
   },
+
+  // 404 handling
+  generate: {
+    fallback: true,
+  },
 };
