@@ -19,6 +19,10 @@ module.exports = {
         "thm-blue": "#ACACDB",
         "thm-blue-dark": "#344DCB",
       },
+      fontFamily: {
+        sans: '"Open Sans", Helvetica, Arial, sans-serif',
+        display: '"Libre Franklin", Helvetica, Arial, sans-serif',
+      },
       lineHeight: {
         12: "3rem",
       },
