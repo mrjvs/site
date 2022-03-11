@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="to"
-    class="flex justify-start font-bold items-center text-thm group"
+    class="inline-flex justify-start font-bold items-center text-thm group"
   >
     <span class="mr-3">
       <slot />

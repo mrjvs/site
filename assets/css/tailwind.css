@@ -4,16 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* base styles */
-::selection {
-  background-color: rgba(37, 109, 85, 0.308);
-  color: #c1f1db;
-}
-
 @layer base {
   body,
   html {
-    @apply flex flex-col relative font-sans;
+    @apply relative flex flex-col font-sans;
     background-color: #181826;
     color: #9292ac;
   }
@@ -26,6 +20,12 @@
   .theme-green .text-thm {
     @apply text-thm-green;
   }
+
+  ::selection {
+    background-color: rgba(37, 109, 85, 0.308);
+    color: #c1f1db;
+  }
+
   body[data-theme="pink"] .text-thm,
   body[data-theme] .theme-pink .text-thm,
   .theme-pink .text-thm {

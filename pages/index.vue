@@ -60,12 +60,11 @@
       <div class="my-8">
         <ArticleCardGrid>
           <ArticleCard tag="newest post">
-            <Heading size="3">How to be properly dumb</Heading>
+            <Heading size="3">{{ latestPost.title }}</Heading>
             <Paragraph>
-              A course platform made from scratch for Gary Simon from
-              Designcourse
+              {{ latestPost.description }}
             </Paragraph>
-            <ArrowLink to="/projects">Continue reading</ArrowLink>
+            <ArrowLink :to="`/${latestPost.slug}`">Continue reading</ArrowLink>
           </ArticleCard>
           <ArticleCard has-tag>
             <Heading size="3">How I made Skillform</Heading>
@@ -73,12 +72,12 @@
               A course platform made from scratch for Gary Simon from
               Designcourse
             </Paragraph>
-            <ArrowLink to="/projects">Continue reading</ArrowLink>
+            <ArrowLink to="/writing/skillform">Continue reading</ArrowLink>
           </ArticleCard>
         </ArticleCardGrid>
         <LongArticleCard>
           <Heading size="3">Look through all my posts</Heading>
-          <ArrowLink to="/projects">See all articles</ArrowLink>
+          <ArrowLink to="/writing">See all articles</ArrowLink>
         </LongArticleCard>
       </div>
     </div>
@@ -96,6 +95,19 @@ export default {
     bodyAttrs: {
       "data-theme": "blue",
     },
+  },
+  async asyncData({ $content, params, error }) {
+    const post = await $content("/articles")
+      .sortBy("createdAt", "desc")
+      .limit(1)
+      .fetch()
+      .catch((err) => {
+        error({ statusCode: 404, message: "Page not found" });
+      });
+
+    return {
+      latestPost: post[0],
+    };
   },
 };
 </script>

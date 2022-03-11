@@ -8,15 +8,29 @@
 
 <script>
 export default {
+  head: {
+    bodyAttrs: {
+      "data-theme": "green",
+    },
+  },
   async asyncData({ $content, params, error }) {
-    const page = await $content("/articles", params.post)
+    const postResults = await $content("/articles")
+      .where({
+        $or: [
+          { slug: { $eq: params.post } },
+          { aliases: { $contains: params.post } },
+        ],
+      })
       .fetch()
       .catch((err) => {
         error({ statusCode: 404, message: "Page not found" });
       });
 
+    if (postResults.length == 0)
+      return error({ statusCode: 404, message: "Page not found" });
+
     return {
-      page,
+      page: postResults[0],
     };
   },
   head() {
