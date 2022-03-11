@@ -10,11 +10,12 @@ it's not live yet tho ;-;
 - [x] home page
 - [x] writing page
 - [ ] article page
-- [ ] integrate @nuxt/content
+- [x] integrate @nuxt/content
 - [ ] error page
 - [ ] responsiveness
 - [ ] favicon
 - [ ] Write actual content
+- [ ] Tags on writing page
 
 ## Low priority todo list
 
