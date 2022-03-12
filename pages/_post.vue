@@ -1,18 +1,18 @@
 <template>
-  <div>
-    <h1>{{ page.title }}</h1>
-    <p>{{ page.description }}</p>
-    <nuxt-content :document="page" />
-  </div>
+  <Container>
+    <div class="flex">
+      <div class="flex-1">
+        <BlogContent :document="page" />
+      </div>
+      <div class="w-44 ml-16 mt-8 hidden md:block">
+        <TableOfContents :items="tocFiltered" :document="page" />
+      </div>
+    </div>
+  </Container>
 </template>
 
 <script>
 export default {
-  head: {
-    bodyAttrs: {
-      "data-theme": "green",
-    },
-  },
   async asyncData({ $content, params, error }) {
     const postResults = await $content("/articles")
       .where({
@@ -35,6 +35,9 @@ export default {
   },
   head() {
     return {
+      bodyAttrs: {
+        "data-theme": "green",
+      },
       title: this.page.title,
       meta: [
         {
@@ -62,6 +65,11 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    tocFiltered() {
+      return this.page.toc.filter((link) => link.depth === 2);
+    },
   },
 };
 </script>

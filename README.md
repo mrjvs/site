@@ -9,12 +9,12 @@ it's not live yet tho ;-;
 - [ ] single project page
 - [x] home page
 - [x] writing page
-- [ ] article page
+- [ ] article page (todo: code block, image, margins, footer)
 - [x] integrate @nuxt/content
 - [x] error page
-- [ ] responsiveness (just need to do nav)
+- [ ] responsiveness (just need to do nav + article page)
 - [ ] favicon
-- [ ] Write actual content
+- [ ] Write actual content (all text + a first post)
 - [x] Tags on writing page
 
 ## Low priority todo list
