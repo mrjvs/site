@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full">
+  <div v-if="allItems.length > 1" class="h-full">
     <div class="sticky top-16 overflow-y-auto h-auto">
       <nav class="py-8">
         <scrollactive
