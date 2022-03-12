@@ -5,6 +5,7 @@
 
       <div class="max-w-2xl my-16">
         <Heading size="2" class="max-w-xl">{{ post.title }}</Heading>
+        <TagsFromPost :post="post" />
         <Paragraph>
           {{ post.description }}
         </Paragraph>

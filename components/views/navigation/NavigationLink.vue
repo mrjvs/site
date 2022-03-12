@@ -8,7 +8,6 @@
         'link-pink hover:text-thm-pink': color === 'pink',
         'link-green hover:text-thm-green': color === 'green',
       }"
-      exact
     >
       <Icon v-if="icon.length > 0" :icon="icon" />
       <span>

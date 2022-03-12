@@ -4,7 +4,7 @@
     <div class="max-w-2xl mt-32 mb-16">
       <Tagline>newest post</Tagline>
       <Heading size="2" class="max-w-xl">{{ firstPost.title }}</Heading>
-      <Tags :items="['test', 'test2']" />
+      <TagsFromPost :post="firstPost" />
       <Paragraph>
         {{ firstPost.description }}
       </Paragraph>
@@ -42,11 +42,12 @@
       </div>
     </div>
 
-    <div v-for="(post, i) in restOfPosts" :key="post.slug">
-      <Divider v-if="i !== 0" />
+    <div v-for="post in restOfPosts" :key="post.slug">
+      <Divider />
 
       <div class="max-w-2xl my-16">
         <Heading size="2" class="max-w-xl">{{ post.title }}</Heading>
+        <TagsFromPost :post="post" />
         <Paragraph>
           {{ post.description }}
         </Paragraph>

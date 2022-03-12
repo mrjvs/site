@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1
-      class="font-bold font-display leading-12 mb-8 text-4xl text-white"
+      class="font-bold font-display leading-8 md:leading-12 mb-8 text-2xl md:text-4xl text-white"
       v-if="size === '1'"
     >
       <slot />

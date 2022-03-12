@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-bray-500 rounded-md px-8 py-4 article-card-long flex justify-between theme-green"
+    class="bg-bray-500 rounded-md px-8 py-4 article-card-long space-y-2 sm:space-y-0 flex-col sm:flex-row flex justify-between theme-green"
   >
     <slot />
   </div>
