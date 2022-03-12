@@ -42,6 +42,7 @@
       </div>
     </div>
 
+    <!-- REST OF POSTS -->
     <div v-for="post in restOfPosts" :key="post.slug">
       <Divider />
 

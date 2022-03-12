@@ -4,18 +4,18 @@ it's not live yet tho ;-;
 
 # Todo list
 
-- [ ] 404 page
-- [ ] projects page
+- [x] 404 page
+- [x] projects page
 - [ ] single project page
 - [x] home page
 - [x] writing page
 - [ ] article page
 - [x] integrate @nuxt/content
-- [ ] error page
-- [ ] responsiveness
+- [x] error page
+- [ ] responsiveness (just need to do nav)
 - [ ] favicon
 - [ ] Write actual content
-- [ ] Tags on writing page
+- [x] Tags on writing page
 
 ## Low priority todo list
 

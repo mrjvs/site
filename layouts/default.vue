@@ -1,12 +1,14 @@
 <template>
-  <div class="min-h-screen block py-1">
+  <div class="min-h-screen flex flex-col">
     <Flare />
     <Depth />
-    <div class="relative">
+    <div class="relative flex-1 flex-col flex">
       <Container>
         <Navigation />
       </Container>
-      <Nuxt />
+      <div class="flex-1 flex flex-col">
+        <Nuxt />
+      </div>
       <Container>
         <Footer />
       </Container>

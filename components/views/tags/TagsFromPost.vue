@@ -15,7 +15,6 @@ export default {
   computed: {
     formattedDate() {
       const now = DateTime.now();
-      console.log(this.post.createdAt);
       const createdAt = DateTime.fromISO(this.post.createdAt);
       const diff = now.diff(createdAt);
       const twoDaysIntervalInHours = 2 * 24;

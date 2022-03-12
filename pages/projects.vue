@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <div class="mt-32">
+    <div class="mt-32 mb-32">
       <Heading size="2">My projects</Heading>
       <Paragraph
         >Sed sollicitudin risus at porta viverra.<br />
@@ -26,6 +26,14 @@
           </ProjectCardContent>
         </ProjectCard>
       </div>
+    </div>
+    <div class="max-w-sm mx-auto text-center">
+      <Heading size="2">That's all my featured projects</Heading>
+      <Paragraph>
+        What can I say? It's a hard page to write. I'll get it done some day
+        though. For now all I can give you is a link back home
+      </Paragraph>
+      <ArrowLink to="/">Check my github</ArrowLink>
     </div>
   </Container>
 </template>
