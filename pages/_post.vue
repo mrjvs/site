@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <div class="flex">
+    <div class="flex mb-24">
       <div class="flex-1">
         <BlogContent :document="page" type="blog" />
       </div>
@@ -8,6 +8,10 @@
         <TableOfContents :items="tocFiltered" :document="page" />
       </div>
     </div>
+    <LongArticleCard>
+      <Heading size="3">Look through all my posts</Heading>
+      <ArrowLink to="/writing">See all articles</ArrowLink>
+    </LongArticleCard>
   </Container>
 </template>
 
