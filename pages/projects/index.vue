@@ -32,10 +32,11 @@
 
 <script>
 import { headMixin } from "~/mixins/head";
+import { iconMixin } from "~/mixins/icon";
 import { themeColorMixin } from "~/mixins/themeColor";
 
 export default {
-  mixins: [headMixin(themeColorMixin("blue"))],
+  mixins: [headMixin(themeColorMixin("blue"), iconMixin("projects"))],
   async asyncData({ $content, params, error }) {
     const projects = await $content("/projects")
       .sortBy("createdAt", "desc")

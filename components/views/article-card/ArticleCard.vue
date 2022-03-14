@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-bray-500 rounded-md p-8 pr-12 article-card theme-green">
+  <div
+    class="bg-bray-500 rounded-md p-8 pr-12 flex flex-col article-card theme-green"
+  >
     <Tagline v-if="hasTag || tag.length > 0">{{ tag }}</Tagline>
     <slot />
   </div>
@@ -11,6 +13,9 @@
 }
 .article-card > *:last-child {
   @apply mb-0;
+}
+.article-card > .paragraph:last-of-type {
+  @apply flex-1;
 }
 .article-card > p.paragraph {
   @apply mb-4;

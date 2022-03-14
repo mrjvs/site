@@ -17,10 +17,11 @@
 
 <script>
 import { headMixin } from "~/mixins/head";
+import { iconMixin } from "~/mixins/icon";
 import { themeColorMixin } from "~/mixins/themeColor";
 
 export default {
-  mixins: [headMixin(themeColorMixin("green"))],
+  mixins: [headMixin(themeColorMixin("green"), iconMixin("writing"))],
   async asyncData({ $content, params, error }) {
     const postResults = await $content("/articles")
       .where({ categories: { $contains: params.category } })

@@ -6,7 +6,7 @@ it's not live yet tho ;-;
 
 - [x] 404 page
 - [x] projects page
-- [ ] single project page
+- [x] single project page
 - [x] home page
 - [x] writing page
 - [ ] article page (todo: code block, image, margins, footer)

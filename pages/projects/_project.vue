@@ -15,9 +15,16 @@
 import { themeColorMixin } from "@/mixins/themeColor";
 import { postMetaMixin } from "@/mixins/postMeta";
 import { headMixin } from "@/mixins/head";
+import { iconMixin } from "~/mixins/icon";
 
 export default {
-  mixins: [headMixin(themeColorMixin("blue"), postMetaMixin("page"))],
+  mixins: [
+    headMixin(
+      themeColorMixin("blue"),
+      iconMixin("projects"),
+      postMetaMixin("page")
+    ),
+  ],
   async asyncData({ $content, params, error }) {
     const postResults = await $content("/projects")
       .where({

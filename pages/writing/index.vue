@@ -22,21 +22,14 @@
       </Paragraph>
       <div class="my-8">
         <ArticleCardGrid>
-          <ArticleCard>
-            <Heading size="3">How I made Skillform</Heading>
+          <ArticleCard v-for="category in categories" :key="category.category">
+            <Heading size="3">{{ category.title }}</Heading>
             <Paragraph>
-              A course platform made from scratch for Gary Simon from
-              Designcourse
+              {{ category.description }}
             </Paragraph>
-            <ArrowLink to="/writing/skillform">Continue reading</ArrowLink>
-          </ArticleCard>
-          <ArticleCard>
-            <Heading size="3">How I made Skillform</Heading>
-            <Paragraph>
-              A course platform made from scratch for Gary Simon from
-              Designcourse
-            </Paragraph>
-            <ArrowLink to="/writing/skillform">Continue reading</ArrowLink>
+            <ArrowLink :to="`/writing/${category.category}`">
+              See the posts
+            </ArrowLink>
           </ArticleCard>
         </ArticleCardGrid>
       </div>
@@ -60,11 +53,18 @@
 
 <script>
 import { headMixin } from "~/mixins/head";
+import { iconMixin } from "~/mixins/icon";
 import { themeColorMixin } from "~/mixins/themeColor";
 
 export default {
-  mixins: [headMixin(themeColorMixin("green"))],
+  mixins: [headMixin(themeColorMixin("green"), iconMixin("writing"))],
   async asyncData({ $content, params, error }) {
+    const categories = await $content("/categories")
+      .fetch()
+      .catch((err) => {
+        error({ statusCode: 404, message: "Page not found" });
+      });
+
     const postResults = await $content("/articles")
       .sortBy("createdAt", "desc")
       .fetch()
@@ -74,6 +74,7 @@ export default {
 
     return {
       posts: postResults,
+      categories,
     };
   },
   computed: {

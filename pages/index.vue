@@ -59,12 +59,13 @@
             <ArrowLink :to="`/${latestPost.slug}`">Continue reading</ArrowLink>
           </ArticleCard>
           <ArticleCard has-tag>
-            <Heading size="3">How I made Skillform</Heading>
+            <Heading size="3">{{ featuredCategory.title }}</Heading>
             <Paragraph>
-              A course platform made from scratch for Gary Simon from
-              Designcourse
+              {{ featuredCategory.description }}
             </Paragraph>
-            <ArrowLink to="/writing/skillform">Continue reading</ArrowLink>
+            <ArrowLink :to="`/writing/${featuredCategory.category}`">
+              See all posts
+            </ArrowLink>
           </ArticleCard>
         </ArticleCardGrid>
         <LongArticleCard>
@@ -78,10 +79,11 @@
 
 <script>
 import { headMixin } from "~/mixins/head";
+import { iconMixin } from "~/mixins/icon";
 import { themeColorMixin } from "~/mixins/themeColor";
 
 export default {
-  mixins: [headMixin(themeColorMixin("blue"))],
+  mixins: [headMixin(themeColorMixin("blue"), iconMixin("about"))],
   async asyncData({ $content, params, error }) {
     const post = await $content("/articles")
       .sortBy("createdAt", "desc")
@@ -98,9 +100,18 @@ export default {
         error({ statusCode: 404, message: "Page not found" });
       });
 
+    const featuredCategory = await $content("/categories")
+      .where({ featured: { $eq: true } })
+      .limit(1)
+      .fetch()
+      .catch((err) => {
+        error({ statusCode: 404, message: "Page not found" });
+      });
+
     return {
       latestPost: post[0],
       projects,
+      featuredCategory: featuredCategory[0],
     };
   },
 };
