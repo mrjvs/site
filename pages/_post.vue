@@ -12,7 +12,12 @@
 </template>
 
 <script>
+import { themeColorMixin } from "@/mixins/themeColor";
+import { postMetaMixin } from "@/mixins/postMeta";
+import { headMixin } from "@/mixins/head";
+
 export default {
+  mixins: [headMixin(themeColorMixin("green"), postMetaMixin("page"))],
   async asyncData({ $content, params, error }) {
     const postResults = await $content("/articles")
       .where({
@@ -31,39 +36,6 @@ export default {
 
     return {
       page: postResults[0],
-    };
-  },
-  head() {
-    return {
-      bodyAttrs: {
-        "data-theme": "green",
-      },
-      title: this.page.title,
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: this.page.description,
-        },
-        // Open Graph
-        { hid: "og:title", property: "og:title", content: this.page.title },
-        {
-          hid: "og:description",
-          property: "og:description",
-          content: this.page.description,
-        },
-        // Twitter Card
-        {
-          hid: "twitter:title",
-          name: "twitter:title",
-          content: this.page.title,
-        },
-        {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content: this.page.description,
-        },
-      ],
     };
   },
   computed: {

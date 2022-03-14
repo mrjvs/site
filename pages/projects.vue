@@ -40,15 +40,13 @@
 
 <script>
 import DesigncourseLogo from "~/assets/icons/logos/designcourse.svg?inline";
+import { headMixin } from "~/mixins/head";
+import { themeColorMixin } from "~/mixins/themeColor";
 
 export default {
   components: {
     DesigncourseLogo,
   },
-  head: {
-    bodyAttrs: {
-      "data-theme": "blue",
-    },
-  },
+  mixins: [headMixin(themeColorMixin("blue"))],
 };
 </script>

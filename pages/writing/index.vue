@@ -59,12 +59,11 @@
 </template>
 
 <script>
+import { headMixin } from "~/mixins/head";
+import { themeColorMixin } from "~/mixins/themeColor";
+
 export default {
-  head: {
-    bodyAttrs: {
-      "data-theme": "green",
-    },
-  },
+  mixins: [headMixin(themeColorMixin("green"))],
   async asyncData({ $content, params, error }) {
     const postResults = await $content("/articles")
       .sortBy("createdAt", "desc")
