@@ -56,7 +56,7 @@
 
   /* lists */
   ul {
-    @apply -mt-4 mb-8;
+    @apply -mt-4 mb-8 relative;
 
     > li {
       @apply mb-3 ml-10;
