@@ -11,6 +11,10 @@
     background-color: #181826;
     color: #9292ac;
   }
+
+  * {
+    @apply min-w-0;
+  }
 }
 
 /* theme styles */

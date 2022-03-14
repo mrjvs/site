@@ -64,4 +64,13 @@ export default {
   generate: {
     fallback: true,
   },
+
+  // nuxt content
+  content: {
+    markdown: {
+      prism: {
+        theme: "prism-themes/themes/prism-night-owl.css",
+      },
+    },
+  },
 };
