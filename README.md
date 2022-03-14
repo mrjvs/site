@@ -13,12 +13,12 @@ it's not live yet tho ;-;
 - [x] integrate @nuxt/content
 - [x] error page
 - [ ] responsiveness (just need to do nav + article page)
-- [ ] favicon
+- [x] favicon
 - [ ] Write actual content (all text + a first post)
 - [x] Tags on writing page
+- [ ] meta tags
 
 ## Low priority todo list
 
 - [ ] about me page
-- [ ] meta tags
 - [ ] like system
