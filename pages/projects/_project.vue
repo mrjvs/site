@@ -2,7 +2,7 @@
   <Container>
     <div class="flex">
       <div class="flex-1">
-        <BlogContent :document="page" type="blog" />
+        <BlogContent :document="page" type="project" />
       </div>
       <div class="w-44 ml-16 mt-8 hidden md:block">
         <TableOfContents :items="tocFiltered" :document="page" />
@@ -17,13 +17,13 @@ import { postMetaMixin } from "@/mixins/postMeta";
 import { headMixin } from "@/mixins/head";
 
 export default {
-  mixins: [headMixin(themeColorMixin("green"), postMetaMixin("page"))],
+  mixins: [headMixin(themeColorMixin("blue"), postMetaMixin("page"))],
   async asyncData({ $content, params, error }) {
-    const postResults = await $content("/articles")
+    const postResults = await $content("/projects")
       .where({
         $or: [
-          { slug: { $eq: params.post } },
-          { aliases: { $contains: params.post } },
+          { slug: { $eq: params.project } },
+          { aliases: { $contains: params.project } },
         ],
       })
       .fetch()

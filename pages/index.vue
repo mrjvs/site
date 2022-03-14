@@ -27,22 +27,14 @@
         Suspendisse quis laoreet dui.
       </Paragraph>
       <div class="my-8 space-y-3">
-        <ProjectCard to="/projects">
-          <ProjectCardLogo><DesigncourseLogo /></ProjectCardLogo>
-          <ProjectCardContent title="Designcourse">
-            <Paragraph>
-              A course platform made from scratch for Gary Simon from
-              Designcourse
-            </Paragraph>
-          </ProjectCardContent>
-        </ProjectCard>
-        <ProjectCard to="/projects">
-          <ProjectCardLogo><DesigncourseLogo /></ProjectCardLogo>
-          <ProjectCardContent title="Designcourse">
-            <Paragraph>
-              A course platform made from scratch for Gary Simon from
-              Designcourse
-            </Paragraph>
+        <ProjectCard
+          v-for="(project, i) in projects"
+          :key="i"
+          :to="`/projects/${project.slug}`"
+        >
+          <ProjectCardLogo><Logo :logo="project.logo" /></ProjectCardLogo>
+          <ProjectCardContent :title="project.title">
+            <Paragraph>{{ project.description }}</Paragraph>
           </ProjectCardContent>
         </ProjectCard>
       </div>
@@ -85,14 +77,10 @@
 </template>
 
 <script>
-import DesigncourseLogo from "~/assets/icons/logos/designcourse.svg?inline";
 import { headMixin } from "~/mixins/head";
 import { themeColorMixin } from "~/mixins/themeColor";
 
 export default {
-  components: {
-    DesigncourseLogo,
-  },
   mixins: [headMixin(themeColorMixin("blue"))],
   async asyncData({ $content, params, error }) {
     const post = await $content("/articles")
@@ -103,8 +91,16 @@ export default {
         error({ statusCode: 404, message: "Page not found" });
       });
 
+    const projects = await $content("/projects")
+      .sortBy("createdAt", "desc")
+      .fetch()
+      .catch((err) => {
+        error({ statusCode: 404, message: "Page not found" });
+      });
+
     return {
       latestPost: post[0],
+      projects,
     };
   },
 };

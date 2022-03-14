@@ -11,6 +11,10 @@ export default {
       type: Object,
       required: true,
     },
+    hasCreatedAt: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     formattedDate() {
@@ -25,8 +29,11 @@ export default {
       return createdAt.toLocaleString(DateTime.DATE_MED);
     },
     items() {
+      let out = [];
       const categories = this.post.categories ?? [];
-      return [...categories, this.formattedDate];
+      out = [...categories];
+      if (this.hasCreatedAt) out = [...out, this.formattedDate];
+      return out;
     },
   },
 };

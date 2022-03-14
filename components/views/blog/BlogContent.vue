@@ -2,9 +2,14 @@
   <div>
     <div class="blog-content">
       <div class="main-heading">
-        <ArrowLink to="/writing" reverse>Back to all posts</ArrowLink>
+        <ArrowLink v-if="type === 'project'" to="/projects" reverse>
+          All projects
+        </ArrowLink>
+        <ArrowLink v-else-if="type === 'blog'" to="/writing" reverse>
+          All posts
+        </ArrowLink>
         <h1 id="title">{{ document.title }}</h1>
-        <TagsFromPost :post="document" />
+        <TagsFromPost :post="document" :has-created-at="type === 'blog'" />
       </div>
 
       <NuxtContent :document="document" />
@@ -52,6 +57,10 @@ export default {
     document: {
       type: Object,
       required: true,
+    },
+    type: {
+      type: String,
+      default: "blog",
     },
   },
 };
