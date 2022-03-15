@@ -4,7 +4,7 @@
       class="flex-col bg-bray-700 bg-opacity-50 rounded-md sm:flex-row sm:bg-transparent flex items-stretch sm:items-center py-2 sm:py-0 my-6 sm:my-8"
     >
       <NavigationItem>
-        <div class="py-3 px-4 sm:mr-10">
+        <div class="py-3 px-4 sm:px-0 sm:mr-10">
           <slot name="brand"><NavigationBrand /></slot>
         </div>
         <div class="flex sm:hidden flex-1 justify-end">
