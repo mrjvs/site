@@ -4,7 +4,7 @@
     <div class="max-w-2xl mt-32 mb-16">
       <Tagline>newest post</Tagline>
       <Heading size="2" class="max-w-xl">{{ firstPost.title }}</Heading>
-      <TagsFromPost :post="firstPost" />
+      <TagsFromPost :post="firstPost" has-created-at />
       <Paragraph>
         {{ firstPost.description }}
       </Paragraph>
@@ -41,7 +41,7 @@
 
       <div class="max-w-2xl my-16">
         <Heading size="2" class="max-w-xl">{{ post.title }}</Heading>
-        <TagsFromPost :post="post" />
+        <TagsFromPost :post="post" has-created-at />
         <Paragraph>
           {{ post.description }}
         </Paragraph>
