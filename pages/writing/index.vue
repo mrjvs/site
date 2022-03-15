@@ -2,7 +2,7 @@
   <Container>
     <!-- NEWEST POST -->
     <div class="max-w-2xl mt-32 mb-16">
-      <Tagline>newest post</Tagline>
+      <Tagline>latest post</Tagline>
       <Heading size="2" class="max-w-xl">{{ firstPost.title }}</Heading>
       <TagsFromPost :post="firstPost" has-created-at />
       <Paragraph>
@@ -15,10 +15,10 @@
 
     <!-- WRITING CATEGORIES -->
     <div class="my-16">
-      <Heading size="2">My writing</Heading>
-      <Paragraph
-        >Sed sollicitudin risus at porta viverra.<br />
-        Suspendisse quis laoreet dui.
+      <Heading size="2">Post series</Heading>
+      <Paragraph>
+        A few of the posts are about a journey,<br />
+        and you can tag along
       </Paragraph>
       <div class="my-8">
         <ArticleCardGrid>

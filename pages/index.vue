@@ -3,17 +3,22 @@
     <!-- HERO -->
     <div class="max-w-2xl mt-32 mb-32">
       <Heading size="1" class="max-w-xl">
-        I'm Jelle van Snik, I specialize in full stack web development
+        I'm Jelle van Snik, I specialise in full stack development
       </Heading>
       <Paragraph>
-        Sed sollicitudin risus at porta viverra. Suspendisse quis laoreet dui.
-        In hac habitasse platea dictumst. Suspendisse et felis quis felis
-        elementum fringilla. Aenean facilisis congue.
+        I am a Dutch developer with a keen attention to detail, looking at
+        applications from all angles. My passions lie in UI design and crafting
+        scalable infrastructure.
       </Paragraph>
       <Paragraph>
-        viverra. Suspendisse nisi turpis, lobortis sed libero sodales, pharetra
-        tempor ex. Sed in rutrum tortor. Ut maximus leo fermentum mattis
-        lobortis.
+        Aside from development, I love to play musical instruments and I spend
+        far too much time finding new indie-games to play.
+      </Paragraph>
+      <Paragraph>
+        Currently a student at Codam Coding College, upping my knowledge on
+        lower level programming. The curriculum contains exciting projects such
+        as creating your own OS kernel and making a gameboy emulator - both from
+        scratch. Both of which I'm unreasonably excited for.
       </Paragraph>
     </div>
 
@@ -22,9 +27,9 @@
     <!-- PROJECTS -->
     <div class="mt-24 mb-32">
       <Heading size="2">My projects</Heading>
-      <Paragraph
-        >Sed sollicitudin risus at porta viverra.<br />
-        Suspendisse quis laoreet dui.
+      <Paragraph>
+        Carefully picked projects, emphasising<br />
+        the ones I enjoyed the most
       </Paragraph>
       <div class="my-8 space-y-3">
         <ProjectCard
@@ -45,13 +50,13 @@
     <!-- WRITING -->
     <div class="mt-24">
       <Heading size="2">My writing</Heading>
-      <Paragraph
-        >Sed sollicitudin risus at porta viverra.<br />
-        Suspendisse quis laoreet dui.
+      <Paragraph>
+        I like to pass on my knowledge,<br />
+        my thoughts and my mistakes
       </Paragraph>
       <div class="my-8">
         <ArticleCardGrid>
-          <ArticleCard tag="newest post">
+          <ArticleCard tag="latest post">
             <Heading size="3">{{ latestPost.title }}</Heading>
             <Paragraph>
               {{ latestPost.description }}

@@ -2,9 +2,9 @@
   <Container>
     <div class="mt-32 mb-32">
       <Heading size="2">My projects</Heading>
-      <Paragraph
-        >Sed sollicitudin risus at porta viverra.<br />
-        Suspendisse quis laoreet dui.
+      <Paragraph>
+        Carefully picked projects, emphasising<br />
+        the ones I enjoyed the most
       </Paragraph>
       <div class="my-8 space-y-3">
         <ProjectCard
@@ -22,8 +22,8 @@
     <div class="max-w-sm mx-auto text-center">
       <Heading size="2">That's all my featured projects</Heading>
       <Paragraph>
-        What can I say? It's a hard page to write. I'll get it done some day
-        though. For now all I can give you is a link back home
+        I only listed the projects that I find most interesting or enjoyed a
+        lot. Below I linked my github, you can use that to see more of my work.
       </Paragraph>
       <ArrowLink to="/">Check my github</ArrowLink>
     </div>
