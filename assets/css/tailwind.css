@@ -17,6 +17,10 @@
   }
 }
 
+a {
+  @apply focus:outline-none focus-visible:outline-white;
+}
+
 /* theme styles */
 @layer utilities {
   body[data-theme="green"] .text-thm,

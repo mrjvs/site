@@ -26,12 +26,16 @@ module.exports = {
       lineHeight: {
         12: "3rem",
       },
+      outline: {
+        white: ["2px solid white", "5px"],
+      },
     },
   },
   plugins: [],
   variants: {
     extend: {
       translate: ["group-hover"],
+      outline: ["focus-visible"],
     },
   },
 };
