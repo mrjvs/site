@@ -11,7 +11,7 @@
           <li v-for="link of allItems" :key="link.id" class="my-2">
             <a
               :href="`#${link.id}`"
-              class="block text-sm scrollactive-item transition-padding link px-4 border-transparent border-l-2 ease-in-out text-bray-200 duration-150 hover:text-bray-100"
+              class="block text-sm scrollactive-item link px-4 border-transparent border-l-2 ease-in-out text-bray-200 duration-150 hover:text-bray-100"
               >{{ link.text }}</a
             >
           </li>
@@ -28,6 +28,8 @@
 .link {
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
+  user-select: none;
+  outline-width: 0 !important;
 }
 </style>
 
