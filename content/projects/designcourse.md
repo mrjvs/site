@@ -8,7 +8,7 @@ link: https://designcourse.com
 
 [Designcourse](https://designcourse.com) is a course platform built from the ground up for popular Youtuber [Gary Simon](https://www.youtube.com/channel/UCVyRiMvfUNMA1UPlDPzG5Ow).
 
-Traditional course platforms did not offer the level of `flexiblity that Gary required both for styling and functionality of the overall platform`.
+Traditional course platforms did not offer the level of flexiblity that Gary required both for styling and functionality of the overall platform.
 
 As with any full-stack application, there were three main parts of Designcourse each assigned to a different person:
 

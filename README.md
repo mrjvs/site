@@ -16,8 +16,8 @@ it's not live yet tho ;-;
 - [x] Tags on writing page
 - [x] responsiveness (just need to do nav)
 - [x] fix deployment being broken
-- [ ] meta tags
-- [ ] Write actual content (all text + a first post)
+- [x] meta tags
+- [x] Write actual content (all text + a first post)
 
 ## Low priority todo list
 
