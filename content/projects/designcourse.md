@@ -27,7 +27,7 @@ To make you technical people happy, here is a short digestable list of all the t
 - Docker + Jenkins for deployment
 - Cloudflare for DNS
 - Traefik for linking services together
-- Linode for serrvers
+- Linode for servers
 - Braintree for payment
 - Passport.js for authentication
 
