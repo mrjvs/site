@@ -1,5 +1,6 @@
 <template>
   <NuxtLink
+    v-if="to && to.length > 0"
     :to="to"
     class="inline-flex justify-start font-bold items-center text-thm group"
   >
@@ -15,6 +16,24 @@
       class="text-xs transition-transform transform mt-1 group-hover:translate-x-1"
     />
   </NuxtLink>
+  <a
+    v-else
+    :href="href"
+    target="_blank"
+    class="inline-flex justify-start font-bold items-center text-thm group"
+  >
+    <LongArrowIcon
+      v-if="reverse"
+      class="text-xs mr-3 transition-transform rotate-180 transform mt-1 group-hover:-translate-x-1"
+    />
+    <span class="mr-3">
+      <slot />
+    </span>
+    <LongArrowIcon
+      v-if="!reverse"
+      class="text-xs transition-transform transform mt-1 group-hover:translate-x-1"
+    />
+  </a>
 </template>
 
 <script>
@@ -27,7 +46,11 @@ export default {
   props: {
     to: {
       type: String,
-      required: true,
+      default: "",
+    },
+    href: {
+      type: String,
+      default: "",
     },
     reverse: {
       type: Boolean,

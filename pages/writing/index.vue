@@ -15,10 +15,10 @@
 
     <!-- WRITING CATEGORIES -->
     <div class="my-16">
-      <Heading size="2">Post series</Heading>
+      <Heading size="2">My development journeys</Heading>
       <Paragraph>
-        A few of the posts are about a journey,<br />
-        and you can tag along
+        Come and tag along with me as I go <br />
+        through my development journeys.
       </Paragraph>
       <div class="my-8">
         <ArticleCardGrid>

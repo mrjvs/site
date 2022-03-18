@@ -10,6 +10,11 @@
         </ArrowLink>
         <h1 id="title">{{ document.title }}</h1>
         <TagsFromPost :post="document" :has-created-at="type === 'blog'" />
+        <div class="-mt-8">
+          <ArrowLink v-if="type === 'project'" :href="document.link">
+            Check out the project
+          </ArrowLink>
+        </div>
       </div>
 
       <NuxtContent :document="document" />
@@ -52,6 +57,18 @@
   hr {
     @apply w-full border-0 bg-bray-400 my-14;
     height: 2px;
+  }
+
+  /* links */
+  .nuxt-content {
+    a {
+      @apply text-thm-green hover:text-opacity-75 font-bold underline;
+    }
+  }
+
+  /* inline code block */
+  code {
+    @apply bg-bray-700 rounded-md text-opacity-75 text-bray-100 py-1 px-2 mx-2;
   }
 
   /* lists */

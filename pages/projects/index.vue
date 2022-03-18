@@ -23,7 +23,8 @@
       <Heading size="2">That's all my featured projects</Heading>
       <Paragraph>
         I only listed the projects that I find most interesting or enjoyed a
-        lot. Below I linked my github, you can use that to see more of my work.
+        lot. My GitHub is linked below &mdash; you can use that to see more of
+        my work.
       </Paragraph>
       <ArrowLink to="/">Check my github</ArrowLink>
     </div>

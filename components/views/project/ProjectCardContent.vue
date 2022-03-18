@@ -1,7 +1,9 @@
 <template>
-  <div class="p-7 project-card-content flex-1">
-    <Heading v-if="title.length > 0" size="3">{{ title }}</Heading>
-    <slot />
+  <div class="flex-1 p-7">
+    <div class="max-w-md project-card-content">
+      <Heading v-if="title.length > 0" size="3">{{ title }}</Heading>
+      <slot />
+    </div>
   </div>
 </template>
 
