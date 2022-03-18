@@ -26,7 +26,7 @@
         lot. My GitHub is linked below &mdash; you can use that to see more of
         my work.
       </Paragraph>
-      <ArrowLink to="/">Check my github</ArrowLink>
+      <ArrowLink href="https://github.com/mrjvs/">Check my github</ArrowLink>
     </div>
   </Container>
 </template>
