@@ -14,7 +14,7 @@ As with any full-stack application, there were three main parts of Designcourse 
 
 - Gary produced Designcourse's design himself.
 - [Jip](https://jipfr.nl) was commissioned to translate the designs into front-end HTML and CSS.
-- I am responsible for producing the back-end application, intergrating the front-end into the backe-end and also managing the infrastructure.
+- I am responsible for producing the back-end application, intergrating the front-end into the back-end and also managing the infrastructure.
 
 ## Some tech details
 
