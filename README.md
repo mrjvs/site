@@ -1,8 +1,3 @@
-# It's my site
+# mrjvs.com
 
-What else can I say?
-
-## todo list
-
-- [ ] about me page
-- [ ] like system
+My website
