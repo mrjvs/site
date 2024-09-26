@@ -2,3 +2,4 @@ dist
 .solid
 .vinxi
 node_modules
+.output
