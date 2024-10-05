@@ -1,5 +1,7 @@
+import { JSXElement } from 'solid-js';
+
 export type ContainerProps = {
-  children: any;
+  children?: JSXElement;
 };
 
 export function Container(props: ContainerProps) {

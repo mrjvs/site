@@ -1,8 +1,9 @@
+import { JSXElement, Show } from 'solid-js';
 import { Container } from './Container';
 
 export type ContentProps = {
-  navigation: any;
-  children: any;
+  navigation?: JSXElement;
+  children?: JSXElement;
 };
 
 export function Content(props: ContentProps) {
@@ -10,8 +11,12 @@ export function Content(props: ContentProps) {
 
   return (
     <>
-      <Container>{nav()}</Container>
-      <Container>{props.children}</Container>
+      <Show when={props.navigation}>
+        <Container>{props.navigation}</Container>
+      </Show>
+      <Container>
+        <div class="mt-48">{props.children}</div>
+      </Container>
     </>
   );
 }
