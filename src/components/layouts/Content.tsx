@@ -3,12 +3,11 @@ import { Container } from './Container';
 
 export type ContentProps = {
   navigation?: JSXElement;
+  footer?: JSXElement;
   children?: JSXElement;
 };
 
 export function Content(props: ContentProps) {
-  const nav = () => props.navigation ?? null;
-
   return (
     <>
       <Show when={props.navigation}>
@@ -17,6 +16,11 @@ export function Content(props: ContentProps) {
       <Container>
         <div class="mt-48">{props.children}</div>
       </Container>
+      <Show when={props.footer}>
+        <Container>
+          <div class="mt-48">{props.footer}</div>
+        </Container>
+      </Show>
     </>
   );
 }

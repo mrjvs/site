@@ -15,7 +15,7 @@ export function Avatar(props: AvatarProps) {
       }}
     >
       <img
-        class="rounded-full h-6 w-6 mr-2"
+        class="rounded-full h-5 w-5 mr-2"
         src="https://github.com/mrjvs.png"
         alt="mrjvs's profile picture"
       />
