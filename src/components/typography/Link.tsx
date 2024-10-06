@@ -12,7 +12,7 @@ export function Link(props: LinkProps) {
     <a
       href={props.to ?? '#'}
       classList={{
-        ['text-sm flex group font-semibold items-center text-primary-100 transition-colors hover:underline']:
+        ['text-sm inline-flex group font-semibold items-center text-primary-100 transition-colors hover:underline']:
           true,
         [props.class ?? '']: true,
       }}

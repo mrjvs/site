@@ -1,10 +1,16 @@
-import { MdiGithub, MingcuteMailFill, PhArrowUpRightBold } from './icon-list';
+import {
+  MdiGithub,
+  MingcuteMailFill,
+  MingcuteRightSmallLine,
+  PhArrowUpRightBold,
+} from './icon-list';
 import { Dynamic } from 'solid-js/web';
 
 export const iconMap = {
   email: MingcuteMailFill,
   github: MdiGithub,
   link: PhArrowUpRightBold,
+  chevronRight: MingcuteRightSmallLine,
 } as const;
 
 export type IconName = keyof typeof iconMap;
