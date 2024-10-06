@@ -10,7 +10,7 @@ export type ContentProps = {
 export function Content(props: ContentProps) {
   return (
     <div class="grid grid-cols-1 grid-rows-[auto,1fr,auto] min-h-screen">
-      <div>
+      <div class="h-14">
         <Show when={props.navigation}>
           <Container>{props.navigation}</Container>
         </Show>
