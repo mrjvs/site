@@ -1,9 +1,15 @@
-import { RouteSectionProps } from '@solidjs/router';
+import { RouteDefinition, RouteSectionProps } from '@solidjs/router';
 import { Dynamic } from 'solid-js/web';
 import { Content } from '~/components/layouts/Content';
 import { PostProvider } from '~/components/utils/PostProvider';
 import { posts } from '~/posts/_index';
 import { FooterView } from '~/views/FooterView';
+
+export const route = {
+  matchFilters: {
+    slug: (v: string) => !!posts.postMap[v],
+  },
+} satisfies RouteDefinition;
 
 export default function PostLayout(props: RouteSectionProps) {
   const page = () => posts.postMap[props.params.slug];
