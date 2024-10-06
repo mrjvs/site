@@ -4,10 +4,15 @@ import {
   createResource,
   createSignal,
   JSXElement,
+  Match,
   Show,
+  Switch,
 } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
 import { MDXProvider } from 'solid-marked';
+import { Heading, HeroHeading } from '../typography/Heading';
+import { Paragraph } from '../typography/Paragraph';
+import { Link } from '../typography/Link';
 
 export function PostProvider(props: { children: JSXElement }) {
   const [highlighter] = createResource(async () =>
@@ -21,22 +26,21 @@ export function PostProvider(props: { children: JSXElement }) {
       builtins={{
         Heading(props): JSXElement {
           return (
-            <a href={`#${props.id}`}>
-              <Dynamic component={`h${props.depth}`} id={props.id}>
-                {props.children}
-              </Dynamic>
-            </a>
+            <Switch>
+              <Match when={props.depth === 1}>
+                <HeroHeading>{props.children}</HeroHeading>
+              </Match>
+              <Match when={props.depth > 1}>
+                <Heading>{props.children}</Heading>
+              </Match>
+            </Switch>
           );
         },
         Paragraph(props): JSXElement {
-          return <p>{props.children}</p>;
+          return <Paragraph>{props.children}</Paragraph>;
         },
         Root(props): JSXElement {
-          return (
-            <div class="bg-white m-4 p-4 rounded-lg prose">
-              {props.children}
-            </div>
-          );
+          return <div>{props.children}</div>;
         },
         Blockquote(props): JSXElement {
           return <blockquote>{props.children}</blockquote>;
@@ -85,11 +89,7 @@ export function PostProvider(props: { children: JSXElement }) {
           );
         },
         Link(props): JSXElement {
-          return (
-            <a href={props.url} title={props.title ?? undefined}>
-              {props.children}
-            </a>
-          );
+          return <Link to={props.url}>{props.children}</Link>;
         },
       }}
     >
