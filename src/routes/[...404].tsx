@@ -1,4 +1,3 @@
-import { A } from '@solidjs/router';
 import { Content } from '~/components/layouts/Content';
 import { Heading } from '~/components/typography/Heading';
 

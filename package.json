@@ -16,7 +16,9 @@
     "autoprefixer": "^10.4.19",
     "luxon": "^3.5.0",
     "postcss": "^8.4.38",
+    "shiki": "^1.21.1",
     "solid-js": "^1.8.18",
+    "solid-marked": "^0.6.3",
     "tailwindcss": "^3.4.3",
     "vinxi": "^0.4.1"
   },
@@ -31,6 +33,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-solid": "^0.14.3",
-    "globals": "^15.9.0"
+    "globals": "^15.9.0",
+    "unplugin-solid-marked": "^0.6.3"
   }
 }

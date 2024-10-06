@@ -1,3 +1,4 @@
+import { PostItem } from '~/utils/post-collection';
 import { Heading } from '../typography/Heading';
 import { Icon } from '../typography/Icon';
 import { Link } from '../typography/Link';
@@ -18,6 +19,15 @@ export type TinyPostProps = {
 export type LargePostProps = {
   post: PostExcerpt;
 };
+
+export function toPostExcerpt(post: PostItem): PostExcerpt {
+  return {
+    excerpt: post.excerpt,
+    title: post.title,
+    publishDate: post.publishDate,
+    url: `/posts/${post.slug}`,
+  };
+}
 
 export function TinyPost(props: TinyPostProps) {
   return (

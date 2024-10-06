@@ -1,9 +1,9 @@
 import { defineConfig } from '@solidjs/start/config';
-import mdx from '@mdx-js/rollup';
+import solidMarkedPlugin from 'unplugin-solid-marked';
 
 export default defineConfig({
   ssr: false,
   vite: {
-    plugins: [mdx()],
+    plugins: [solidMarkedPlugin.vite({})],
   },
 });
