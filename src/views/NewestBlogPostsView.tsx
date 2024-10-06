@@ -27,7 +27,7 @@ export function NewestBlogPostsView() {
     <>
       <div class="flex items-end justify-between mb-3">
         <Heading noSpacing>Blog</Heading>
-        <Link to="#">All posts</Link>
+        <Link to="/posts">All posts</Link>
       </div>
       <Divider />
       <div class="grid grid-cols-2 gap-8 mt-7">

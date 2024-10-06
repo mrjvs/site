@@ -1,5 +1,6 @@
 import { Heading } from '../typography/Heading';
 import { Icon } from '../typography/Icon';
+import { Link } from '../typography/Link';
 import { Paragraph } from '../typography/Paragraph';
 import { NiceDate } from './NiceDate';
 
@@ -11,6 +12,10 @@ export type PostExcerpt = {
 };
 
 export type TinyPostProps = {
+  post: PostExcerpt;
+};
+
+export type LargePostProps = {
   post: PostExcerpt;
 };
 
@@ -35,5 +40,18 @@ export function TinyPost(props: TinyPostProps) {
         <NiceDate date={props.post.publishDate} />
       </article>
     </a>
+  );
+}
+
+export function LargePost(props: LargePostProps) {
+  return (
+    <article>
+      <NiceDate date={props.post.publishDate} />
+      <Heading noSpacing>{props.post.title}</Heading>
+      <Paragraph noSpacing class="mb-3 mt-2">
+        {props.post.excerpt}
+      </Paragraph>
+      <Link to={props.post.url}>Read post</Link>
+    </article>
   );
 }
