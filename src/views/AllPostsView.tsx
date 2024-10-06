@@ -1,6 +1,6 @@
 import { For } from 'solid-js';
 import { LargePost, toPostExcerpt } from '~/components/utils/Post';
-import { posts } from '~/posts';
+import { posts } from '~/posts/_index';
 
 export function AllPostsView() {
   const getPosts = () => posts.sortedPosts.map(toPostExcerpt);

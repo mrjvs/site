@@ -3,7 +3,7 @@ import { Divider } from '~/components/typography/Didivder';
 import { Heading } from '~/components/typography/Heading';
 import { Link } from '~/components/typography/Link';
 import { TinyPost, toPostExcerpt } from '~/components/utils/Post';
-import { posts } from '~/posts';
+import { posts } from '~/posts/_index';
 
 export function NewestBlogPostsView() {
   const getNewestPosts = (n: number) =>

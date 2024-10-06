@@ -1,3 +1,5 @@
+import { DateTime } from 'luxon';
+
 export type PostItem = {
   slug: string;
   title: string;
@@ -12,7 +14,8 @@ export type PostCollection = {
 };
 
 export type PostCallbackContext = {
-  add(post: PostItem): void;
+  addItem(post: PostItem): void;
+  addMdx(comp: any): void;
 };
 
 export function makePostCollection(
@@ -24,14 +27,26 @@ export function makePostCollection(
   };
 
   cb({
-    add(post) {
+    addItem(post) {
+      collection.sortedPosts.push(post);
+      collection.postMap[post.slug] = post;
+    },
+    addMdx(comp) {
+      const fm: Record<string, string> = comp.frontmatter ?? {};
+      const post: PostItem = {
+        title: fm.title,
+        excerpt: fm.excerpt,
+        publishDate: DateTime.fromISO(fm.date).toJSDate(),
+        slug: fm.slug,
+        comp: comp.default,
+      };
       collection.sortedPosts.push(post);
       collection.postMap[post.slug] = post;
     },
   });
 
   collection.sortedPosts.sort(
-    (a, b) => a.publishDate.getTime() - b.publishDate.getTime(),
+    (a, b) => b.publishDate.getTime() - a.publishDate.getTime(),
   );
 
   return collection;
