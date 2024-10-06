@@ -10,14 +10,14 @@ export function ProjectsView() {
     <>
       <Timeline>
         <TimelineBubble>
-          <Heading noSpacing>Favourite projects I’ve worked</Heading>
-          <Paragraph>My proudest work, displayed first</Paragraph>
+          <Heading noSpacing>Favourite projects I've worked</Heading>
+          <Paragraph>Sorted by significance</Paragraph>
         </TimelineBubble>
 
         <Breakout>
           <StampedCard>
             <Heading subtitle="Courses that are more than just video">
-              Designcourse
+              DesignCourse
             </Heading>
             <Paragraph>
               An interactive digital course platform. Learn UI/UX, CSS, Web
@@ -29,52 +29,21 @@ export function ProjectsView() {
               me an opportunity to learn lots of things, not just code but also
               maintaining and securing servers.
             </Paragraph>
-            <Link to="#test">About Designcourse</Link>
+            <Link to="#test">About DesignCourse</Link>
           </StampedCard>
 
           <StampedCard>
             <Heading subtitle="Collection of composable tools">NeatoJS</Heading>
             <Paragraph>
-              When developing applications in NodeJS you will discover a bunch
-              of annoyances that haven’t been properly solved. NeatoJS is here
-              to fill that gap.
-            </Paragraph>
-            <Link to="#test">About NeatoJS</Link>
-          </StampedCard>
-        </Breakout>
-
-        <TimelineBubble class="mt-12">
-          <Heading noSpacing>Past projects</Heading>
-          <Paragraph>
-            These projects are no longer active, but I still hold them dear.
-          </Paragraph>
-        </TimelineBubble>
-
-        <Breakout>
-          <StampedCard>
-            <Heading subtitle="Courses that are more than just video">
-              Designcourse
-            </Heading>
-            <Paragraph>
-              An interactive digital course platform. Learn UI/UX, CSS, Web
-              animations and much more from Gary Simon - an industry expert with
-              20 years of experience.
+              NeatoJS is a project that I started to address issues that I had
+              with existing libraries and tools in the JavaScript ecosystem.
             </Paragraph>
             <Paragraph>
-              Maintaining and developing a platform with 16 thousand users gave
-              me an opportunity to learn lots of things, not just code but also
-              maintaining and securing servers.
+              Currently consists of a config library for strongly typed and
+              validated runtime configuration, and a flexible documentation tool
+              that looks good out of the box.
             </Paragraph>
-            <Link to="#test">About Designcourse</Link>
-          </StampedCard>
 
-          <StampedCard>
-            <Heading subtitle="Collection of composable tools">NeatoJS</Heading>
-            <Paragraph>
-              When developing applications in NodeJS you will discover a bunch
-              of annoyances that haven’t been properly solved. NeatoJS is here
-              to fill that gap.
-            </Paragraph>
             <Link to="#test">About NeatoJS</Link>
           </StampedCard>
         </Breakout>

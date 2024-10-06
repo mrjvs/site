@@ -13,10 +13,8 @@ export function HeroView() {
         rather than one part
       </HeroHeading>
       <Paragraph class="mb-8">
-        Hey, I am Jelle van Snik. I like making things that solve problems. Hey,
-        I am Jelle van Snik. I like making things that solve problems. Hey, I am
-        Jelle van Snik. I like making things that solve problems. Hey, I am
-        Jelle van Snik. I like making things that solve problems.
+        Hey, I am Jelle van Snik. I'm a full-stack developer and web designer
+        making things that solve problems.
       </Paragraph>
       <div class="flex items-center gap-8">
         <SocialLink icon="email" to="mailto:hello@mrjvs.com">
