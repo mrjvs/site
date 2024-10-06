@@ -25,11 +25,11 @@ export function ProjectsView() {
               20 years of experience.
             </Paragraph>
             <Paragraph>
-              Maintaining and developing a platform with 16 thousand users gave
-              me an opportunity to learn lots of things, not just code but also
-              maintaining and securing servers.
+              Maintaining and developing a platform with 16 thousand users gives
+              you an insight on not just how to maintain code, but also the
+              significance of hosting securely.
             </Paragraph>
-            <Link to="#test">About DesignCourse</Link>
+            <Link to="https://designcourse.com">About DesignCourse</Link>
           </StampedCard>
 
           <StampedCard>
@@ -44,7 +44,7 @@ export function ProjectsView() {
               that looks good out of the box.
             </Paragraph>
 
-            <Link to="#test">About NeatoJS</Link>
+            <Link to="https://neatojs.com">About NeatoJS</Link>
           </StampedCard>
         </Breakout>
       </Timeline>

@@ -14,10 +14,11 @@ export function Avatar(props: AvatarProps) {
         [props.class ?? '']: true,
       }}
     >
-      <img
-        class="rounded-full h-5 w-5 mr-2 bg-shade-700"
-        src="https://github.com/mrjvs.png"
-        alt="mrjvs's profile picture"
+      <div
+        class="rounded-full h-5 w-5 mr-2 bg-shade-700 bg-cover bg-center"
+        style={{
+          'background-image': `url('https://github.com/mrjvs.png')`,
+        }}
       />
       <Show when={!props.hideName}>
         <p class="text-shade-400 text-sm">mrjvs</p>
