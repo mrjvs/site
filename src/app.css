@@ -8,3 +8,7 @@
 body, html {
   @apply bg-shade-800 text-shade-300 font-body;
 }
+
+::selection {
+  @apply bg-primary-200 text-white;
+}
