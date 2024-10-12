@@ -1,0 +1,58 @@
+---
+title: "Early returns aren't bad practice"
+slug: "early-returns"
+excerpt: "Students are taught to have a single exit. This only causes less readable code"
+date: "2024-10-12T14:18:48.332Z"
+---
+
+import { CodeblockWarning } from "~/components/markdown/Code"
+
+# Early exits aren't bad practice!
+
+When writing code you will often have to check for a bunch of conditions before the logic of your function or endpoint.
+
+Students are usually taught to avoid multiple exit conditions and only have one of them inside your function. However this practice leads bugs and harder to read code.
+
+Let's take an example of a function that adds a comment to a social media post:
+ - If post is restricted, only some users can comment. Otherwise everybody can.
+ - User can not comment if you are blocked by the author.
+ - User must have their email verified.
+ - Comment must be
+
+```ts
+function createCommentOnPost(user: User, post: Post, comment: string): boolean {
+  let result = false;
+
+  if (!post.isRestricted || post.canUserComment(user)) {
+    if (!user.hasBlocked(post.author)) {
+      if (user.emailVerified) {
+        if (comment.length > 0) {
+          if (!containsSwearWords(comment)) {
+
+            result = true;
+          }
+
+        }
+      }
+    }
+  }
+
+  return result;
+}
+```
+<CodeblockWarning>
+  This causes very nested code and makes it hard to trace what logic is applied where
+</CodeblockWarning>
+
+
+## How returns are taught
+
+When writing code you will often have to check for a bunch of conditions before the logic of your function or endpoint.
+
+Students are usually taught to avoid multi
+
+---
+
+When writing code you will often have to check for a bunch of conditions before the logic of your function or endpoint.
+
+Students are usually taught to avoid multi.

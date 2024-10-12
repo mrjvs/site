@@ -1,26 +1,12 @@
-import { BuiltinLanguage, createHighlighter } from 'shiki';
-import {
-  createEffect,
-  createResource,
-  createSignal,
-  JSXElement,
-  Match,
-  Show,
-  Switch,
-} from 'solid-js';
+import { JSXElement, Match, Show, Switch } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
 import { MDXProvider } from 'solid-marked';
 import { Heading, HeroHeading } from '../typography/Heading';
 import { Paragraph } from '../typography/Paragraph';
 import { Link } from '../typography/Link';
+import { Codeblock } from '../markdown/Code';
 
 export function PostProvider(props: { children: JSXElement }) {
-  const [highlighter] = createResource(async () =>
-    createHighlighter({
-      langs: ['tsx', 'jsx', 'md', 'mdx', 'markdown', 'bash', 'js', 'ts'],
-      themes: ['github-dark'],
-    }),
-  );
   return (
     <MDXProvider
       builtins={{
@@ -51,19 +37,9 @@ export function PostProvider(props: { children: JSXElement }) {
           );
         },
         Code(props): JSXElement {
-          const [ref, setRef] = createSignal<HTMLPreElement | undefined>();
-          createEffect(() => {
-            const current = ref();
-            const instance = highlighter();
-            const content = props.children;
-            if (current && instance && content) {
-              current.innerHTML = instance.codeToHtml(content, {
-                lang: (props.lang ?? undefined) as BuiltinLanguage,
-                theme: 'github-dark',
-              });
-            }
-          });
-          return <div ref={setRef} lang={props.lang ?? undefined} />;
+          return (
+            <Codeblock content={props.children ?? ''} language={props.lang} />
+          );
         },
         InlineCode(props): JSXElement {
           return <code>{props.children}</code>;

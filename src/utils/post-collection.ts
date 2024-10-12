@@ -5,6 +5,7 @@ export type PostItem = {
   title: string;
   excerpt: string;
   publishDate: Date;
+  published: boolean;
   comp: any;
 };
 
@@ -15,7 +16,7 @@ export type PostCollection = {
 
 export type PostCallbackContext = {
   addItem(post: PostItem): void;
-  addMdx(comp: any): void;
+  addMdx(comp: any, publish: boolean): void;
 };
 
 export function makePostCollection(
@@ -31,7 +32,7 @@ export function makePostCollection(
       collection.sortedPosts.push(post);
       collection.postMap[post.slug] = post;
     },
-    addMdx(comp) {
+    addMdx(comp, published) {
       const fm: Record<string, string> = comp.frontmatter ?? {};
       const post: PostItem = {
         title: fm.title,
@@ -39,6 +40,7 @@ export function makePostCollection(
         publishDate: DateTime.fromISO(fm.date).toJSDate(),
         slug: fm.slug,
         comp: comp.default,
+        published: published ?? true,
       };
       collection.sortedPosts.push(post);
       collection.postMap[post.slug] = post;

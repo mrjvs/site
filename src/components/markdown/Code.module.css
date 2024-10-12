@@ -1,0 +1,7 @@
+.code > pre > code {
+  @apply bg-shade-600 grid grid-cols-1 overflow-auto p-4;
+}
+
+.code > pre {
+  @apply overflow-hidden rounded-md text-xs leading-5 relative z-10;
+}

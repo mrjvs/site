@@ -1,7 +1,7 @@
 import { makePostCollection } from '~/utils/post-collection';
 
-import * as HelloWorld from './hello-world.mdx';
+import * as EarlyReturns from './early-returns.mdx';
 
 export const posts = makePostCollection(({ addMdx }) => {
-  addMdx(HelloWorld);
+  addMdx(EarlyReturns, false);
 });
