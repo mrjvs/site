@@ -46,6 +46,18 @@ export function ProjectsView() {
 
             <Link to="https://neatojs.com">About NeatoJS</Link>
           </StampedCard>
+          
+          <StampedCard>
+            <Heading subtitle="Reliable and high quality uptime tracker">Statulo</Heading>
+            <Paragraph>
+              Statulo is a project I started with a buddy because most uptime trackers I tried were either too limited, too expensive, or don't feel nice to use.
+            </Paragraph>
+            <Paragraph>
+              It’s still early, but the goal is simple: Cheap, reliable and it must feel nice to use.
+            </Paragraph>
+          
+            <Link to="https://github.com/statulo/statulo">About Statulo</Link>
+          </StampedCard>
         </Breakout>
       </Timeline>
     </>
